@@ -1,0 +1,35 @@
+﻿<Window x:Class="RecycleBinFilesRestorer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RecycleBinFilesRestorer"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="179*"/>
+            <RowDefinition Height="13*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="275*"/>
+            <ColumnDefinition Width="433*"/>
+            <ColumnDefinition Width="92"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btnSourceFilesBrowse" Content="Browse" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Width="72" Click="btnSourceFilesBrowse_Click" Grid.Column="2" Height="20"/>
+        <TextBox x:Name="txtSourceFiles" Margin="10,10,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Height="18" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnScan" Content="Scan!" Margin="10,30,10,0" VerticalAlignment="Top" RenderTransformOrigin="-5.775,-0.53" Grid.ColumnSpan="3" Click="btnScan_Click" Height="19"/>
+        <ListBox x:Name="listPairs" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="9,41,10,26" Grid.Row="1"/>
+        <TextBox x:Name="txtFilter" Margin="137,4,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Grid.Row="1" TextChanged="txtFilter_TextChanged" Height="18"/>
+        <Label x:Name="label" Content="Filter" HorizontalAlignment="Left" Margin="9,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Height="26"/>
+        <Label x:Name="labStatus" Content="" Grid.Row="2" VerticalAlignment="Center" Margin="10,0,0,0" Height="26"/>
+        <Label x:Name="labListStatus" Content="" Grid.Row="1" VerticalAlignment="Top" Margin="10,332,10,0" Height="26"/>
+        <TextBox x:Name="txtOuptut" Margin="97,4,87,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Grid.Row="1" TextChanged="txtFilter_TextChanged" Height="18" Grid.Column="1"/>
+        <Label x:Name="label_Copy" Content="Output Location" HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="100" Height="26" Grid.Column="1"/>
+        <ListBox x:Name="listOutput" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,41,10,26" Grid.Row="1" Grid.Column="1"/>
+        <Button x:Name="btnOutputBrowse" Content="Browse" HorizontalAlignment="Left" Margin="272,3,0,0" VerticalAlignment="Top" Width="72" Grid.Column="1" Height="20" Grid.Row="1" Click="btnOutputBrowse_Click"/>
+        <Button x:Name="btnRun" Content="RUNNNN!" Margin="10,0,10,0" VerticalAlignment="Center" RenderTransformOrigin="-5.775,-0.53" Height="18" Grid.Row="2" Grid.Column="1" Click="btnRun_Click"/>
+
+    </Grid>
+</Window>
